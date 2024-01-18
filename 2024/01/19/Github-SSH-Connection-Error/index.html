@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | LitVeer&#39;s House</title>
+        <title>Github SSH 连接错误记录 | LitVeer&#39;s House</title>
         <meta name="author" content="LitVeer" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -28,6 +28,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,68 +145,44 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+                <div class="article">
+    <div>
+        <h1>Github SSH 连接错误记录</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/19
+        </span>
         
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/8/15</div>
-                <a href="/2023/08/15/Hello-World/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="mc内网穿透搭建">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/1/2</div>
-                <a href="/2024/01/02/Minecraft_Intranet_Penetration_Setup/">
-                    <h3>MC内网穿透搭建</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="githubssh连接错误记录">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/1/19</div>
-                <a href="/2024/01/19/Github-SSH-Connection-Error/">
-                    <h3>Github SSH 连接错误记录</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="typescript入门">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/1/19</div>
-                <a href="/2024/01/19/Start_TypeScript/">
-                    <h3>TypeScript入门</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <h3 id="Github-SSH-连接错误记录"><a href="#Github-SSH-连接错误记录" class="headerlink" title="Github SSH 连接错误记录"></a>Github SSH 连接错误记录</h3><h4 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h4><h6 id="上传文章，执行以下命令时出现"><a href="#上传文章，执行以下命令时出现" class="headerlink" title="上传文章，执行以下命令时出现"></a>上传文章，执行以下命令时出现</h6><pre><code>hexo d
+</code></pre>
+<img src="/2024/01/19/Github-SSH-Connection-Error/image-20240119005815547.png" alt="image-20240119005815547" style="zoom:50%;">
+
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>1.关闭代理</p>
+<p>2.将 Github 的连接端口从 22 改为 443</p>
+<p>在.ssh下创建文件 config ，内容如下，将连接端口从22改为443</p>
+<pre><code class="typescript">Host github.com
+    HostName ssh.github.com
+    User git
+    Port 443
+</code></pre>
+<p>测试命令     ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
                 <footer id="footer">
@@ -233,6 +213,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
