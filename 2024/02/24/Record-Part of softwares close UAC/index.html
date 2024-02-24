@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | LitVeer&#39;s House</title>
+        <title> | LitVeer&#39;s House</title>
         <meta name="author" content="LitVeer" />
         <meta name="description" content="Technology and Anime shared" />
         <meta name="keywords" content="Anime, Technology" />
@@ -28,6 +28,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,82 +145,48 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+                <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/2/24
+        </span>
         
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/8/15</div>
-                <a href="/2023/08/15/Hello-World/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="mc内网穿透搭建">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/1/2</div>
-                <a href="/2024/01/02/Minecraft_Intranet_Penetration_Setup/">
-                    <h3>MC内网穿透搭建</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="githubssh连接错误记录">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/1/19</div>
-                <a href="/2024/01/19/Github-SSH-Connection-Error/">
-                    <h3>Github SSH 连接错误记录</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="typescript入门">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/1/19</div>
-                <a href="/2024/01/19/Start_TypeScript/">
-                    <h3>TypeScript入门</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/2/24</div>
-                <a href="/2024/02/24/Record-Part%20of%20softwares%20close%20UAC/">
-                    <h3></h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <h4 id="记录：部分软件关闭UAC"><a href="#记录：部分软件关闭UAC" class="headerlink" title="记录：部分软件关闭UAC"></a>记录：部分软件关闭UAC</h4><p>操作步骤</p>
+<h5 id="1-进入注册表"><a href="#1-进入注册表" class="headerlink" title="1.进入注册表"></a>1.进入注册表</h5><img src="/2024/02/24/Record-Part%20of%20softwares%20close%20UAC/image-20240224173030442.png" alt="image-20240224173030442" style="zoom:33%;">
+
+<h5 id="2-打开以下路径"><a href="#2-打开以下路径" class="headerlink" title="2.打开以下路径"></a>2.打开以下路径</h5><p>计算机\HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers</p>
+<h5 id="3-新建字符串值"><a href="#3-新建字符串值" class="headerlink" title="3.新建字符串值"></a>3.新建字符串值</h5><img src="/2024/02/24/Record-Part%20of%20softwares%20close%20UAC/image-20240224173333242.png" alt="image-20240224173333242" style="zoom: 50%;">
+
+<h5 id="4-修改内容"><a href="#4-修改内容" class="headerlink" title="4.修改内容"></a>4.修改内容</h5><p>数值名称： 修改为对应软件路径</p>
+<p>数值数据： 修改为  RunAsInvoker</p>
+<img src="/2024/02/24/Record-Part%20of%20softwares%20close%20UAC/image-20240224173446439.png" alt="image-20240224173446439" style="zoom:33%;">
+
+
+
+<p>转载于：<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/03b2f78c0de7ee5ea337ae5e.html">Windows10设置某一个程序单独不弹出UAC的方法-百度经验 (baidu.com)</a></p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
 </div>
 
                 <footer id="footer">
@@ -247,6 +217,29 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="litveer/litveer.github.io"
+    data-repo-id="R_kgDOLATQxg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLATQxs4Cc47r"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
         
     </body>
 </html>
