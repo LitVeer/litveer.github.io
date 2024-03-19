@@ -158,6 +158,19 @@
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Tech/" style="color: #03a9f4">Tech</a>
+            </span>
+            
+        </span>
+        
     </div>
     
     <div class="content" v-pre>
@@ -166,7 +179,8 @@
 <li>在线编辑平台 <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/play">https://www.typescriptlang.org/play</a></li>
 <li>官方文档 <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/">https://www.typescriptlang.org/docs/</a></li>
 </ul>
-<h4 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h4><h5 id="bool（布尔值）"><a href="#bool（布尔值）" class="headerlink" title="bool（布尔值）"></a>bool（布尔值）</h5><p>TypeScript中可以使用boolean来表示这个变量是布尔值，可以赋值为true或者false。</p>
+<h4 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h4><p>let 声明 变量；const 声明 常量</p>
+<h5 id="bool（布尔值）"><a href="#bool（布尔值）" class="headerlink" title="bool（布尔值）"></a>bool（布尔值）</h5><p>TypeScript中可以使用boolean来表示这个变量是布尔值，可以赋值为true或者false。</p>
 <pre><code class="javascript">let isDone: boolean = false;
 </code></pre>
 <h5 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h5><p>TypeScript里的所有数字都是浮点数，这些浮点数的类型是 number。除了支持十进制，还支持二进制、八进制、十六进制。</p>
@@ -214,11 +228,16 @@ let n: null = null;
 myFavoriteNumber = &#39;seven&#39;;
 myFavoriteNumber = 7;
 </code></pre>
+<h5 id="any类型"><a href="#any类型" class="headerlink" title="any类型"></a><strong>any类型</strong></h5><p>任意类型，不进行类型检查</p>
+<h5 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h5><pre><code class="typescript">let p = &#123;name: &#39;Lit&#39;, age: 21&#125;
+console.log(p.name)
+console.log(p[&#39;name&#39;])
+</code></pre>
 <h4 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h4><p>条件语句用于基于不同的条件来执行不同的动作。TypeScript 条件语句是通过一条或多条语句的执行结果（True 或 False）来决定执行的代码块。</p>
 <h5 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h5><p>TypeScript if 语句由一个布尔表达式后跟一个或多个语句组成。</p>
 <pre><code class="typescript">var num:number = 5
 if (num &gt; 0) &#123; 
-   console.log(&#39;数字是正数&#39;) 
+   console.log(&#39;数字是正数&#39;) ;
 &#125;
 </code></pre>
 <h5 id="if…else-语句"><a href="#if…else-语句" class="headerlink" title="if…else 语句"></a>if…else 语句</h5><p>一个 if 语句后可跟一个可选的 else 语句，else 语句在布尔表达式为 false 时执行。</p>
@@ -264,6 +283,16 @@ switch(grade) &#123;
     &#125; 
 &#125;
 </code></pre>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><h5 id="for-初始化；判断条件；变量修改"><a href="#for-初始化；判断条件；变量修改" class="headerlink" title="for(初始化；判断条件；变量修改)"></a>for(初始化；判断条件；变量修改)</h5><pre><code class="typescript">for(let i = 1; i &lt;= 10; i++)&#123;
+    console.log(i);
+&#125;
+</code></pre>
+<h5 id="while-判断条件"><a href="#while-判断条件" class="headerlink" title="while(判断条件)"></a>while(判断条件)</h5><pre><code class="typescript">let i = 1;
+while (i &lt;= 10)&#123;
+    console.log(i);
+    i++;
+&#125;
+</code></pre>
 <h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数是一组一起执行一个任务的语句，函数声明要告诉编译器函数的名称、返回类型和参数。TypeScript可以创建有名字的函数和匿名函数，其创建方法如下：</p>
 <pre><code class="typescript">// 有名函数
 function add(x, y) &#123;
@@ -304,55 +333,37 @@ let result2 = buildName(&#39;Bob&#39;, &#39;Adams&#39;);
 
 let employeeName = getEmployeeName(&#39;Joseph&#39;, &#39;Samuel&#39;, &#39;Lucas&#39;, &#39;MacKinzie&#39;);
 </code></pre>
-<h5 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h5><p>ES6版本的TypeScript提供了一个箭头函数，它是定义匿名函数的简写语法，用于函数表达式，它省略了function关键字。箭头函数的定义如下，其函数是一个语句块：</p>
-<pre><code class="typescript">( [param1, parma2,…param n] )=&gt; &#123;
-    // 代码块
+<h5 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h5><pre><code class="typescript">let hello = (name:string) =&gt; &#123;
+    console.log(&#39;hello,&#39; + name);
 &#125;
+hello(&#39;Lit&#39;)
 </code></pre>
-<p>其中，括号内是函数的入参，可以有0到多个参数，箭头后是函数的代码块。我们可以将这个箭头函数赋值给一个变量，如下所示：</p>
-<pre><code class="typescript">let arrowFun = ( [param1, parma2,…param n] )=&gt; &#123;
-    // 代码块
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><h5 id="enum枚举例子"><a href="#enum枚举例子" class="headerlink" title="enum枚举例子"></a>enum枚举例子</h5><pre><code class="typescript">//定义枚举
+enum Msg&#123;
+    HI = &#39;Hi&#39;,
+    HELLO = &#39;Hello&#39;
 &#125;
-</code></pre>
-<p>如何要主动调用这个箭头函数，可以按如下方法去调用：</p>
-<pre><code class="typescript">arrowFun(param1, parma2,…param n)
-</code></pre>
-<p>接下来我们看看如何将我们熟悉的函数定义方式转换为箭头函数。我们可以定义一个判断正负数的函数，如下：</p>
-<pre><code class="typescript">function testNumber(num: number) &#123;
-  if (num &gt; 0) &#123;
-    console.log(num + &#39; 是正数&#39;);
-  &#125; else if (num &lt; 0) &#123;
-    console.log(num + &#39; 是负数&#39;);
-  &#125; else &#123;
-    console.log(num + &#39; 为0&#39;);
-  &#125;
+
+//定义接口，抽象方法接受枚举参数
+//接口声明方法
+interface A &#123;
+    say(msg: Msg):void
 &#125;
-</code></pre>
-<p>其调用方法如下：</p>
-<pre><code class="typescript">testNumber(1)   //输出日志：1 是正数
-</code></pre>
-<p>如果将这个函数定义为箭头函数，定义如下所示：</p>
-<pre><code class="typescript">let testArrowFun = (num: number) =&gt; &#123;
-  if (num &gt; 0) &#123;
-    console.log(num + &#39; 是正数&#39;);
-  &#125; else if (num &lt; 0) &#123;
-    console.log(num + &#39; 是负数&#39;);
-  &#125; else &#123;
-    console.log(num + &#39; 为0&#39;);
-  &#125;
+
+//实现接口
+class B implements A &#123;
+    say(msg: Msg):void &#123;
+        console.log(msg + &#39;, I am B&#39;)
+    &#125;
 &#125;
+
+//初始化对象
+let a:A = new B()
+//调用方法，传递枚举参数
+a.say(Msg.HI)
 </code></pre>
-<p>其调用方法如下：</p>
-<pre><code class="typescript">testArrowFun(-1)   //输出日志：-1 是负数
-</code></pre>
-<p>后面，我们在学习HarmonyOS应用开发时会经常用到箭头函数。例如，给一个按钮添加点击事件，其中onClick事件中的函数就是箭头函数。</p>
-<pre><code class="typescript">Button(&quot;Click Now&quot;)
-  .onClick(() =&gt; &#123;
-    console.info(&quot;Button is click&quot;)
-  &#125;)
-</code></pre>
-<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>TypeScript支持基于类的面向对象的编程方式，定义类的关键字为 class，后面紧跟类名。类描述了所创建的对象共同的属性和方法。</p>
-<h5 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h5><p>例如，我们可以声明一个Person类，这个类有3个成员：一个是属性（包含name和age)，一个是构造函数，一个是getPersonInfo方法，其定义如下所示。</p>
+<h5 id="类"><a href="#类" class="headerlink" title="类"></a>类</h5><p>TypeScript支持基于类的面向对象的编程方式，定义类的关键字为 class，后面紧跟类名。类描述了所创建的对象共同的属性和方法。</p>
+<h6 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h6><p>例如，我们可以声明一个Person类，这个类有3个成员：一个是属性（包含name和age)，一个是构造函数，一个是getPersonInfo方法，其定义如下所示。</p>
 <pre><code class="typescript">class Person &#123;
   private name: string
   private age: number
@@ -371,7 +382,7 @@ let employeeName = getEmployeeName(&#39;Joseph&#39;, &#39;Samuel&#39;, &#39;Luca
 <pre><code class="typescript">let person1 = new Person(&#39;Jacky&#39;, 18);
 person1.getPersonInfo();
 </code></pre>
-<h5 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h5><p>继承就是子类继承父类的特征和行为，使得子类具有父类相同的行为。TypeScript中允许使用继承来扩展现有的类，对应的关键字为extends。</p>
+<h6 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h6><p>继承就是子类继承父类的特征和行为，使得子类具有父类相同的行为。TypeScript中允许使用继承来扩展现有的类，对应的关键字为extends。</p>
 <pre><code class="typescript">class Employee extends Person &#123;
   private department: string
 
@@ -393,6 +404,22 @@ person2.getEmployeeInfo();
 <p>在TypeScript中，有public、private、protected修饰符，其功能和具体使用场景大家可以参考TypeScript的相关学习资料，进行拓展学习。</p>
 <h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>随着应用越来越大，通常要将代码拆分成多个文件，即所谓的模块（module）。模块可以相互加载，并可以使用特殊的指令 export 和 import 来交换功能，从另一个模块调用一个模块的函数。</p>
 <p>两个模块之间的关系是通过在文件级别上使用 import 和 export 建立的。模块里面的变量、函数和类等在模块外部是不可见的，除非明确地使用 export 导出它们。类似地，我们必须通过 import 导入其他模块导出的变量、函数、类等。</p>
+<pre><code class="typescript">// 定义矩形类，通过export导出
+export class Rectangle &#123;
+    // 成员变量
+    public width: number
+    public lenght: number
+    // 构造函数
+    constructor(width:number,lenght:number)&#123;
+        this.width = width
+        this.lenght = lenght
+    &#125;
+&#125;
+// 定义工具方法，求矩形面积，通过export导出
+export function area(rec: Rectangle): number&#123;
+    return rec.width *rec.lenght
+&#125;
+</code></pre>
 <h5 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h5><p>任何声明（比如变量，函数，类，类型别名或接口）都能够通过添加export关键字来导出，例如我们要把NewsData这个类导出，代码示意如下：</p>
 <pre><code class="typescript">export class NewsData &#123;
   title: string;
@@ -419,7 +446,9 @@ for (let entry of someArray) &#123;
     console.log(entry); // 1, &quot;string&quot;, false
 &#125;
 </code></pre>
-<h5 id="for-of-vs-for-in-语句"><a href="#for-of-vs-for-in-语句" class="headerlink" title="for..of vs for..in 语句"></a>for..of vs for..in 语句</h5><p>for..of和for..in均可迭代一个列表，但是用于迭代的值却不同：for..in迭代的是对象的键，而for..of则迭代的是对象的值。</p>
+<h5 id="for-of-vs-for-in-语句"><a href="#for-of-vs-for-in-语句" class="headerlink" title="for..of vs for..in 语句"></a>for..of vs for..in 语句</h5><p>for..of和for..in均可迭代一个列表，但是用于迭代的值却不同：</p>
+<p><strong>for..in</strong>迭代的是**对象的索引(键)**，</p>
+<p>而<strong>for..of</strong>则迭代的是<strong>对象的值</strong>。</p>
 <pre><code class="typescript">let list = [4, 5, 6];
 
 for (let i in list) &#123;

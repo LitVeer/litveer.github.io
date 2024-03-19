@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>C语言 | LitVeer&#39;s House</title>
+        <title>Numpy_Pandas | LitVeer&#39;s House</title>
         <meta name="author" content="LitVeer" />
         <meta name="description" content="Technology and Anime shared" />
         <meta name="keywords" content="Anime, Technology" />
@@ -147,14 +147,14 @@
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div class="article">
     <div>
-        <h1>C语言</h1>
+        <h1>Numpy_Pandas</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/3/4
+            2024/3/15
         </span>
         
         
@@ -174,66 +174,68 @@
     </div>
     
     <div class="content" v-pre>
-        <h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><h5 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h5><pre><code class="c">#include &lt;stdio.h&gt;
- 
-int main()
-&#123;
-   /* 我的第一个 C 程序 */
-   printf(&quot;Hello, World! \n&quot;);
-   
-   return 0;
-&#125;
+        <h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><h3 id="numpy创建"><a href="#numpy创建" class="headerlink" title="numpy创建:"></a><strong>numpy创建:</strong></h3><p>​	array &#x3D; np.array( [[1,2,3], [2,3,4]] ， dtype &#x3D; np.int64)</p>
+<p>​	<strong>矩阵</strong>：[[1,2,3], [2,3,4]]  （两行三列）</p>
+<p>​	<strong>数据类型：</strong>dtype (int64<strong>、</strong>int32<strong>、</strong>float<strong>、</strong>float32)</p>
+<p>​	<strong>直接生成(按形状)：</strong> np.zeros((3,4)) <strong>、</strong>np.ones((3,4)) <strong>、</strong>np.empty((3,4))  </p>
+<p>​	<strong>直接生成(按数据)：</strong>np.arange(10, 20, 2)</p>
+<p>​	<strong>直接生成(形状+数据)：</strong></p>
+<p>​			<strong>生成0-11的三行四列矩阵：</strong>np.arange(12).reshape((3,4)) </p>
+<p>​			<strong>生成1-10的20个元素矩阵：</strong>np.linspace(1, 10, 20)</p>
+<p>​			<strong>随机矩阵(0-1)：</strong>np.random.random((2,4))</p>
+<p>​	</p>
+<h3 id="numpy属性："><a href="#numpy属性：" class="headerlink" title="numpy属性："></a><strong>numpy属性：</strong></h3><p>​	ndim（维度）、shape（形状）、size（所含元素）</p>
+<pre><code class="python">import numpy as np
+
+array = np.array([[1,2,3], [4,5,6]])
+
+print(&quot;ndim: &quot;,array.ndim)
+print(&quot;shape: &quot;,array.shape)
+print(&quot;size: &quot;,array.size)
+
+
+# ndim:  2
+# shape:  (2, 3)
+# size:  6
 </code></pre>
-<p>1.预处理指令     #include &lt;stdio.h&gt;</p>
-<p>2.主函数  int main()，每个c文件中只能包含一个main函数</p>
-<p>3.注释   单行注释 &#x2F;&#x2F;	多行注释&#x2F;*…*&#x2F;</p>
-<p>4.内置函数 printf()</p>
-<p>5.函数返回值 return 0</p>
-<h5 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h5><h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><p>令牌（token）</p>
-<pre><code class="c">printf
-(
-&quot;Hello, World! \n&quot;
-)
-;
-//每一行为一个token
-</code></pre>
-<p>分号；</p>
-<pre><code class="c">printf(&quot;Hello, World! \n&quot;);
-return 0;
-//每个语句由;结束
-</code></pre>
-<p>注释</p>
-<pre><code class="c">//单行注释
-/*多行注释*/
-</code></pre>
-<p>标识符</p>
-<pre><code class="c">/*
-命名规则
-1.由a-z，A-Z或_开头
-2.其余部分可使用0-9
-3.严格区分大小写
-不允许出现特殊符号
-*/
-</code></pre>
-<p>关键字</p>
-<img src="/2024/03/04/C%20Programming/image-20240228145020315.png" alt="image-20240228145020315" style="zoom: 33%;">
+<h3 id="numpy基础运算"><a href="#numpy基础运算" class="headerlink" title="numpy基础运算:"></a><strong>numpy基础运算:</strong></h3><pre><code class="python">a = np.array([10,20,30,40])
+b = np.arange(4)
 
+# 加减乘除(+-*/)
+    a + b	a * b
 
+# 幂(**)
+    c = a**2
 
+# 三角函数(np.sin(), np.cos())
+    c = np.sin(a)
 
+#比较大小
+    print(a &lt; 25)
 
-<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><img src="/2024/03/04/C%20Programming/image-20240228150129939.png" alt="image-20240228150129939" style="zoom:33%;">
+    Return： [True True False False]
 
-<p>void类型</p>
-<img src="/2024/03/04/C%20Programming/image-20240228152524799.png" alt="image-20240228152524799" style="zoom:33%;">
+# 矩阵相乘
+    # 逐个相乘
+    a * b
+    # 矩阵相乘
+    np.dot(a, b)	a.dpt(b)
 
-<p>类型转换</p>
-<pre><code class="c">//显式类型转换
-如：int、float、double之间转换
-//隐式类型转换
-如：
-    double d = 3.1415926;
-    int i = (int)d;
+# 求和、最小最大值、中位数(np.sum(X), np.min(X), np.max(X)，np.median(X))
+    X： 矩阵， axis = (0为行，1为列)
+
+# 平均值
+    np.mean()  average()为旧版本
+
+# 索引
+    np.argmin(), np.argmax()
+    
+#累加
+    A = [1,2,3,4]
+    np.cumsum(A)
+    
+    Return: [1,3,6,10]
+    
 </code></pre>
 
     </div>

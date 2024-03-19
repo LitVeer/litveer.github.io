@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>C语言 | LitVeer&#39;s House</title>
+        <title>鸿蒙北向 | LitVeer&#39;s House</title>
         <meta name="author" content="LitVeer" />
         <meta name="description" content="Technology and Anime shared" />
         <meta name="keywords" content="Anime, Technology" />
@@ -147,14 +147,14 @@
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div class="article">
     <div>
-        <h1>C语言</h1>
+        <h1>鸿蒙北向</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/3/4
+            2024/3/19
         </span>
         
         
@@ -174,67 +174,99 @@
     </div>
     
     <div class="content" v-pre>
-        <h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><h5 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h5><pre><code class="c">#include &lt;stdio.h&gt;
- 
-int main()
-&#123;
-   /* 我的第一个 C 程序 */
-   printf(&quot;Hello, World! \n&quot;);
-   
-   return 0;
+        <h1 id="ArkUI"><a href="#ArkUI" class="headerlink" title="ArkUI"></a>ArkUI</h1><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>装饰器：装饰类、结构、方法和变量，赋予特殊含义</p>
+<pre><code class="typescript">@Component //自定义组件
+@Entry //设为入口页面
+@Builder 组件名(入参) &#123;     //创建一个内部UI组件
+    //UI组件描述
+&#125;
+    
+
+
+struct 结构名   &#123;
+    @State isChange:boolean = false; //状态变量
+    
+    build()&#123;   //声明式UI结构
+        Row()&#123; //内置组件
+            Text(object)
+                .width(......) //属性
+                 .fontSize(......)
+        &#125;
+        ForEach(入参) &#123;    //迭代器
+            this.组件名
+        &#125;
+    &#125;
+    .onClick() =&gt; &#123;&#125; //事件方法
 &#125;
 </code></pre>
-<p>1.预处理指令     #include &lt;stdio.h&gt;</p>
-<p>2.主函数  int main()，每个c文件中只能包含一个main函数</p>
-<p>3.注释   单行注释 &#x2F;&#x2F;	多行注释&#x2F;*…*&#x2F;</p>
-<p>4.内置函数 printf()</p>
-<p>5.函数返回值 return 0</p>
-<h5 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h5><h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><p>令牌（token）</p>
-<pre><code class="c">printf
-(
-&quot;Hello, World! \n&quot;
-)
-;
-//每一行为一个token
+<pre><code class="javascript">@Prop //从父组件中单向同步状态
+@Link //与父组件双向同步状态
+@Watch //监听状态
 </code></pre>
-<p>分号；</p>
-<pre><code class="c">printf(&quot;Hello, World! \n&quot;);
-return 0;
-//每个语句由;结束
+<p>组件导入与导出：</p>
+<pre><code>export deflaut struct 组件名 &#123;&#125;
+import &#123;组件名&#125; from &quot;url&quot;;
 </code></pre>
-<p>注释</p>
-<pre><code class="c">//单行注释
-/*多行注释*/
-</code></pre>
-<p>标识符</p>
-<pre><code class="c">/*
-命名规则
-1.由a-z，A-Z或_开头
-2.其余部分可使用0-9
-3.严格区分大小写
-不允许出现特殊符号
-*/
-</code></pre>
-<p>关键字</p>
-<img src="/2024/03/04/C%20Programming/image-20240228145020315.png" alt="image-20240228145020315" style="zoom: 33%;">
+<p>UI开发思想：组件模块化</p>
+<p>组件生命周期：指一个组件创造到销毁的过程</p>
+<p>循环渲染：使用ForEach迭代数组，创造组件</p>
+<p>​	由数据来源、子组件生成函数、key值生成器</p>
+<img src="/2024/03/19/Harmony-North-Learning/image-20231029004601413.png" alt="image-20231029004601413" style="zoom:50%;">
 
 
 
 
 
-<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><img src="/2024/03/04/C%20Programming/image-20240228150129939.png" alt="image-20240228150129939" style="zoom:33%;">
+<h2 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h2><img src="/2024/03/19/Harmony-North-Learning/image-20231108091920125.png" alt="image-20231108091920125" style="zoom: 25%;">
 
-<p>void类型</p>
-<img src="/2024/03/04/C%20Programming/image-20240228152524799.png" alt="image-20240228152524799" style="zoom:33%;">
+<img src="/2024/03/19/Harmony-North-Learning/image-20231108092440098.png" alt="image-20231108092440098" style="zoom: 25%;">
 
-<p>类型转换</p>
-<pre><code class="c">//显式类型转换
-如：int、float、double之间转换
-//隐式类型转换
-如：
-    double d = 3.1415926;
-    int i = (int)d;
-</code></pre>
+<h2 id="List组件"><a href="#List组件" class="headerlink" title="List组件"></a>List组件</h2><img src="/2024/03/19/Harmony-North-Learning/image-20231109191209386.png" alt="image-20231109191209386" style="zoom:25%;">
+
+<h4 id="ForEach循环渲染"><a href="#ForEach循环渲染" class="headerlink" title="ForEach循环渲染"></a>ForEach循环渲染</h4><img src="/2024/03/19/Harmony-North-Learning/image-20231109191312639.png" alt="image-20231109191312639" style="zoom:25%;">
+
+<h5 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h5><img src="/2024/03/19/Harmony-North-Learning/image-20231109191406025.png" alt="image-20231109191406025" style="zoom:25%;">
+
+<h2 id="Grid组件"><a href="#Grid组件" class="headerlink" title="Grid组件"></a>Grid组件</h2><img src="/2024/03/19/Harmony-North-Learning/image-20231112011818380.png" alt="image-20231112011818380" style="zoom:25%;">
+
+<img src="/2024/03/19/Harmony-North-Learning/image-20231112110946299.png" alt="image-20231112110946299" style="zoom:25%;">
+
+<img src="/2024/03/19/Harmony-North-Learning/image-20231112111009021.png" alt="image-20231112111009021" style="zoom:25%;">
+
+<img src="/2024/03/19/Harmony-North-Learning/image-20231112111319398.png" alt="image-20231112111319398" style="zoom:25%;">
+
+<img src="/2024/03/19/Harmony-North-Learning/image-20231112111225489.png" alt="image-20231112111225489" style="zoom:25%;">
+
+<h2 id="Tabs组件"><a href="#Tabs组件" class="headerlink" title="Tabs组件"></a>Tabs组件</h2><img src="/2024/03/19/Harmony-North-Learning/image-20231112111554806.png" alt="image-20231112111554806" style="zoom:25%;">
+
+<img src="/2024/03/19/Harmony-North-Learning/image-20231112112015446.png" alt="image-20231112112015446" style="zoom:25%;">
+
+<img src="/2024/03/19/Harmony-North-Learning/image-20231112112033691.png" alt="image-20231112112033691" style="zoom:25%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
     

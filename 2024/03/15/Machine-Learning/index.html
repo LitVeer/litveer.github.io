@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Machine_Learning | LitVeer&#39;s House</title>
+        <meta name="author" content="LitVeer" />
+        <meta name="description" content="Technology and Anime shared" />
+        <meta name="keywords" content="Anime, Technology" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>LITVEER&#39;S HOUSE</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;LITVEER&#39;S HOUSE</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>Machine_Learning</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/3/15
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Tech/" style="color: #00a596">Tech</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><h4 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a><strong>书籍推荐</strong></h4><p>机器学习 – ‘西瓜书’ – 周志华</p>
+<p>统计学习方法 – 李航</p>
+<p>深度学习 – ‘花书’</p>
+<h4 id="可用数据集"><a href="#可用数据集" class="headerlink" title="可用数据集"></a><strong>可用数据集</strong></h4><p><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.datasets"><strong>Scikit-learn</strong></a>：数据量小、方便学习</p>
+<p><a target="_blank" rel="noopener" href="https://archive.ics.uci.edu/"><strong>UCI</strong></a>：收录360个数据集、覆盖生活经济科学等领域、数据量几十万</p>
+<p><a target="_blank" rel="noopener" href="https://www.kaggle.com/datasets"><strong>Kaggle</strong></a>：大数据竞赛平台、大量科学家、真实数据、数据量大</p>
+<h4 id="sklearn数据集调用-替换为数据集名"><a href="#sklearn数据集调用-替换为数据集名" class="headerlink" title="sklearn数据集调用(*替换为数据集名)"></a><strong>sklearn数据集调用</strong>(*替换为数据集名)</h4><p>sklearn.datasets.load_*()    &#x2F;&#x2F; 加载小型数据集</p>
+<p>sklearn.datasets.fetch_*()  &#x2F;&#x2F;加载大型数据集，从网络获取</p>
+<h4 id="sklearn数据集返回值"><a href="#sklearn数据集返回值" class="headerlink" title="sklearn数据集返回值"></a><strong>sklearn数据集返回值</strong></h4><p>返回数据类型datasets.base.Bunch(继承自字典)</p>
+<p>​	<strong>data</strong>：特征数据数组，[n_samples * n_features] 是二维数组</p>
+<p>​		numpy.ndarray 数组</p>
+<p>​	<strong>target</strong>：标签数组，n_samples 的一维 numpy.ndarray 数组</p>
+<p>​	<strong>DESCR</strong>：数据描述</p>
+<p>​	<strong>feature_names</strong>：特征名</p>
+<p>​	<strong>target_names</strong>：标签名</p>
+<h4 id="数据集划分"><a href="#数据集划分" class="headerlink" title="数据集划分"></a><strong>数据集划分</strong></h4><p>sklearn.model_selection.train_test_split(arrays, ‘options’)</p>
+<p><strong>x</strong>为数据集的特征值</p>
+<p><strong>y</strong>为数据集的标签值</p>
+<p><strong>test_size</strong> 为测试集的大小，一般为float类型</p>
+<p><strong>random_state</strong> 为随机数种子</p>
+<p><strong>return</strong> 数据集特征值，测试集特征值，训练集目标值，测试集目标值</p>
+<h3 id="特征工程（处理数据）"><a href="#特征工程（处理数据）" class="headerlink" title="特征工程（处理数据）"></a>特征工程（处理数据）</h3><h4 id="1-特征抽取"><a href="#1-特征抽取" class="headerlink" title="1.特征抽取"></a>1.特征抽取</h4><h5 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h5><p>​	机器学习算法 &#x3D; 统计方法 &#x3D; 数学公式</p>
+<p>​		文本➡数值</p>
+<h5 id="提取"><a href="#提取" class="headerlink" title="提取"></a>提取</h5><p>​	1.字典特征提取（特征离散化）</p>
+<p>​	2.文本特征提取</p>
+<p>​	3.图像特征提取（深度学习）</p>
+<h5 id="特征提取api"><a href="#特征提取api" class="headerlink" title="特征提取api"></a>特征提取api</h5><p>​	sklearn.feature_extraction</p>
+<h5 id="字典特征提取"><a href="#字典特征提取" class="headerlink" title="字典特征提取"></a>字典特征提取</h5><p>​	<strong>sklearn.feature_extraction.DictVectorizer(sparse&#x3D;True)</strong></p>
+<p>sparse为True时返回稀疏矩阵，省去0，节省内存</p>
+<p>​	<strong>DictVectorizer.fit_transform(X)</strong>   X:字典或包含字典的迭代器返回值，返回sparse矩阵</p>
+<p>​	<strong>DictVectorizer.inverse_transform(X)</strong>  X:array数组或者sparse矩阵，返回转换前数据格式</p>
+<p>​	<strong>DictVevtorizer.get_feature_names_out()</strong>  返回类别名称</p>
+<p>​	</p>
+<p>​	vector 向量  一维数组</p>
+<p>​	matrix 矩阵  二维数组</p>
+<h5 id="文章特征抽取"><a href="#文章特征抽取" class="headerlink" title="文章特征抽取"></a>文章特征抽取</h5><p><strong>sklearn.feature_extraction.text.CountVectorizer(stop_words&#x3D;[])</strong></p>
+<p>sparse为True时返回稀疏矩阵，省去0，节省内存</p>
+<p>​	<strong>CountVectorizer.fit_transform(X)</strong>   X:字典或包含字典的迭代器返回值，返回sparse矩阵</p>
+<p>​	<strong>CountVectorizer.inverse_transform(X)</strong>  X:array数组或者sparse矩阵，返回转换前数据格式</p>
+<p>​	<strong>CountVectorizer.get_feature_names_out()</strong>  返回类别名称</p>
+<p>​	特征：单词（特征词）、短语、句子、字母</p>
+<p>中文使用jieba将句子进行分词</p>
+<p>​	<strong>方法1：</strong>CountVectorize    (统计每个特征词出现字数)</p>
+<p>​		stop_words 停用词（排除该单词）</p>
+<p>​	关键词：在某一类别文章多次出现，其他类别出现很少</p>
+<p>​	<strong>方法2：</strong>TfidfVectorizer</p>
+<p>​		TF-IDF  - 重要程度</p>
+<p>​		TF  - 词频（term frequency）</p>
+<h4 id="2-特征预处理"><a href="#2-特征预处理" class="headerlink" title="2.特征预处理"></a>2.特征预处理</h4><p>​	<strong>包含内容：</strong>数值型数据无量纲化（归一化、标准化）</p>
+<p>​	<strong>特征预处理API：</strong> sklearn.preprocessing</p>
+<p>​	<strong>sklearn.preprocessing.MinMaxScaler(feature_range &#x3D; (0,1)…)</strong></p>
+<p>​	MinMaxScaler.fit_transform(X)</p>
+<p>​		<strong>X：</strong>numpy array格式的数据[n_sample，n_features]</p>
+<p>​	<strong>返回值：</strong>转换后的形状相同的array</p>
+<p><strong>sklearn.preprocessing.StandardScaler()</strong></p>
+<p>​	处理后，对每列数据，数据聚集在均值为0附近，标准差为1</p>
+<p>​	StandardScaler.fit_transform(X)</p>
+<p>​		<strong>X：</strong>numpy   array格式数据[n_samples,n_features]</p>
+<p>​	<strong>返回值：</strong>转换后的形状相同的array</p>
+<h4 id="3-特征降维"><a href="#3-特征降维" class="headerlink" title="3.特征降维"></a>3.特征降维</h4><p>降维 - 减少相关性强的变量</p>
+<p>特征选择 - 找出数据特点（过滤式、嵌入式）</p>
+<p>​	Filter过滤式</p>
+<p>​		方差选择法：低方差特征过滤（相同特征方差低）</p>
+<p>​		相关系数法：特征之间相关程度</p>
+<p>​	Embedded</p>
+<p>​		决策树:信息熵、信息增益</p>
+<p>​		正则化:L1、L2</p>
+<p>​		深度学习：卷积等</p>
+<p>模块：sklearn.feature_selection</p>
+<p><strong>Filter低方差特征过滤</strong></p>
+<p><strong>API：</strong>sklearn.feature_selection.VarianceThreshold(threshild &#x3D; 0.0)</p>
+<p>​	实例化;Variance.fit_transform(X)</p>
+<p>​		X:numpy  array格式数据[n_samples,n_features]</p>
+<p>​		返回值：训练集差低于threshold的特征将被删除，默认保留所有非0方差特征</p>
+<p><strong>相关系数</strong></p>
+<p>​	<strong>皮尔逊相关系数</strong></p>
+<img src="/2024/03/15/Machine-Learning/Users/LitVeer/Desktop/Machine_Learning/image-20240311211001275.png" alt="image-20240311211001275" style="zoom:50%;">
+
+<p>​	<strong>API</strong>：scipy.stats import pearsonr</p>
+<p>​		<strong>X</strong>: array_like</p>
+<p>​		<strong>Y</strong>: array_like</p>
+<p>​		<strong>Return</strong>:相关系数</p>
+<p>​	<strong>相关性高处理方法</strong>：择优、加权、主成分分析</p>
+<h4 id="4-主成分分析"><a href="#4-主成分分析" class="headerlink" title="4.主成分分析"></a>4.主成分分析</h4><p>将高维数据转化为低维数据，可能会舍弃原有数据，创造新变量</p>
+<p>p.s 零维：标量	一维：向量	二维：矩阵</p>
+<p>​	<strong>本质</strong>：压缩数据量，减少存储空间</p>
+<p><strong>API：sklearn.decomposition.PCA(n_components&#x3D;None)</strong></p>
+<p>​	<strong>n_component:</strong></p>
+<p>​		<strong>小数</strong>：保留信息的占比</p>
+<p>​		<strong>整数</strong>：减少到多少特征</p>
+<p>​	PCA.fit_transform(X)  <strong>X</strong>:numpy  array格式数据[n_samples,n_features]</p>
+<p>​	<strong>Return</strong>:转换后指定维度的array</p>
+<h5 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h5><p>​	</p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 LitVeer&#39;s House
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;LitVeer
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="litveer/litveer.github.io"
+    data-repo-id="R_kgDOLATQxg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLATQxs4Cc47r"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
