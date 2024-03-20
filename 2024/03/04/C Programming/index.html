@@ -30,6 +30,9 @@
 <script src="/js/lib/preview.js"></script>
 
 
+<script src="https://cdn.staticfile.org/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="/js/lib/crypto.js"></script>
+
 
 
 
@@ -166,77 +169,27 @@
             
             <span class="tag">
                 
-                <a href="/tags/Tech/" style="color: #00a596">Tech</a>
+                <a href="/tags/Tech/" style="color: #00bcd4">Tech</a>
             </span>
             
         </span>
         
     </div>
     
-    <div class="content" v-pre>
-        <h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><h5 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h5><pre><code class="c">#include &lt;stdio.h&gt;
- 
-int main()
-&#123;
-   /* 我的第一个 C 程序 */
-   printf(&quot;Hello, World! \n&quot;);
-   
-   return 0;
-&#125;
-</code></pre>
-<p>1.预处理指令     #include &lt;stdio.h&gt;</p>
-<p>2.主函数  int main()，每个c文件中只能包含一个main函数</p>
-<p>3.注释   单行注释 &#x2F;&#x2F;	多行注释&#x2F;*…*&#x2F;</p>
-<p>4.内置函数 printf()</p>
-<p>5.函数返回值 return 0</p>
-<h5 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h5><h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><p>令牌（token）</p>
-<pre><code class="c">printf
-(
-&quot;Hello, World! \n&quot;
-)
-;
-//每一行为一个token
-</code></pre>
-<p>分号；</p>
-<pre><code class="c">printf(&quot;Hello, World! \n&quot;);
-return 0;
-//每个语句由;结束
-</code></pre>
-<p>注释</p>
-<pre><code class="c">//单行注释
-/*多行注释*/
-</code></pre>
-<p>标识符</p>
-<pre><code class="c">/*
-命名规则
-1.由a-z，A-Z或_开头
-2.其余部分可使用0-9
-3.严格区分大小写
-不允许出现特殊符号
-*/
-</code></pre>
-<p>关键字</p>
-<img src="/2024/03/04/C%20Programming/image-20240228145020315.png" alt="image-20240228145020315" style="zoom: 33%;">
-
-
-
-
-
-<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><img src="/2024/03/04/C%20Programming/image-20240228150129939.png" alt="image-20240228150129939" style="zoom:33%;">
-
-<p>void类型</p>
-<img src="/2024/03/04/C%20Programming/image-20240228152524799.png" alt="image-20240228152524799" style="zoom:33%;">
-
-<p>类型转换</p>
-<pre><code class="c">//显式类型转换
-如：int、float、double之间转换
-//隐式类型转换
-如：
-    double d = 3.1415926;
-    int i = (int)d;
-</code></pre>
-
-    </div>
+    
+    <input
+        id="crypto"
+        :class="['input', cryptoStatus]"
+        :disabled="cryptoStatus == 'success'"
+        ref="crypto"
+        placeholder="文章被加密，请输入密码"
+        data-encrypted="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"
+        data-shasum="8b2dd42ef23c8efc7830063ce64da11c216f36ff8626706967c654ff3dc4bcce"
+        v-model="crypto"
+    />
+    <transition name="fade">
+        <div class="content" ref="content" v-show="cryptoStatus == 'success'"></div>
+    </transition>
     
     
     
