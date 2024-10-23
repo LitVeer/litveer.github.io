@@ -30,9 +30,6 @@
 <script src="/js/lib/preview.js"></script>
 
 
-<script src="https://cdn.staticfile.org/crypto-js/4.1.1/crypto-js.min.js"></script>
-<script src="/js/lib/crypto.js"></script>
-
 
 
 
@@ -169,27 +166,105 @@
             
             <span class="tag">
                 
-                <a href="/tags/Tech/" style="color: #00a596">Tech</a>
+                <a href="/tags/Tech/" style="color: #03a9f4">Tech</a>
             </span>
             
         </span>
         
     </div>
     
-    
-    <input
-        id="crypto"
-        :class="['input', cryptoStatus]"
-        :disabled="cryptoStatus == 'success'"
-        ref="crypto"
-        placeholder="文章被加密，请输入密码"
-        data-encrypted="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"
-        data-shasum="8b2dd42ef23c8efc7830063ce64da11c216f36ff8626706967c654ff3dc4bcce"
-        v-model="crypto"
-    />
-    <transition name="fade">
-        <div class="content" ref="content" v-show="cryptoStatus == 'success'"></div>
-    </transition>
+    <div class="content" v-pre>
+        <h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><h5 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h5><pre><code class="c">#include &lt;stdio.h&gt;
+ 
+int main()
+&#123;
+   /* 我的第一个 C 程序 */
+   printf(&quot;Hello, World! \n&quot;);
+   
+   return 0;
+&#125;
+</code></pre>
+<p>1.预处理指令     #include &lt;stdio.h&gt;</p>
+<p>2.主函数  int main()，每个c文件中只能包含一个main函数</p>
+<p>3.注释   单行注释 &#x2F;&#x2F;	多行注释&#x2F;*…*&#x2F;</p>
+<p>4.内置函数 printf()</p>
+<p>5.函数返回值 return 0</p>
+<h5 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h5><h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><p>令牌（token）</p>
+<pre><code class="c">printf
+(
+&quot;Hello, World! \n&quot;
+)
+;
+//每一行为一个token
+</code></pre>
+<p>分号；</p>
+<pre><code class="c">printf(&quot;Hello, World! \n&quot;);
+return 0;
+//每个语句由;结束
+</code></pre>
+<p>注释</p>
+<pre><code class="c">//单行注释
+/*多行注释*/
+</code></pre>
+<p>标识符</p>
+<pre><code class="c">/*
+命名规则
+1.由a-z，A-Z或_开头
+2.其余部分可使用0-9
+3.严格区分大小写
+不允许出现特殊符号
+*/
+</code></pre>
+<p>关键字</p>
+<img src="/2024/03/04/C%20Programming/image-20240228145020315.png" alt="image-20240228145020315" style="zoom: 33%;">
+
+
+
+
+
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><img src="/2024/03/04/C%20Programming/image-20240228150129939.png" alt="image-20240228150129939" style="zoom:33%;">
+
+<p>void类型</p>
+<img src="/2024/03/04/C%20Programming/image-20240228152524799.png" alt="image-20240228152524799" style="zoom:33%;">
+
+<p>类型转换</p>
+<pre><code class="c">//显式类型转换
+如：int、float、double之间转换
+//隐式类型转换
+如：
+    double d = 3.1415926;
+    int i = (int)d;
+</code></pre>
+<p>冒泡排序</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+
+int main()&#123;
+    int a, b, c;
+    scanf(&quot;%d %d %d&quot;,&amp;a, &amp;b, &amp;c);
+    int list[] = &#123;a, b, c&#125;;
+    for(int i=1; i &lt;=3; i++)&#123;
+        for(int j=i; i &lt;=3; j++)&#123;
+            if(list[j-1] &lt; list[j])&#123;
+                list[j-1] ^= list[j] ^=list[j-1] ^= list[j];
+            &#125;
+        &#125;
+    &#125;
+    printf(&quot;%d %d %d&quot;,list[0], list[1], list[2]);
+    return 0;
+&#125;
+</code></pre>
+<h4 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h4><pre><code class="c">// 空指针不等于false, 0等价与false
+
+int a = 5;
+int *p;
+if (p)
+    printf(&quot;Not NULL&quot;); // &quot;Not NULL&quot;
+
+if (p == NULL)
+    printf(&quot;Not NULL&quot;); // &quot;&quot;
+</code></pre>
+
+    </div>
     
     
     
