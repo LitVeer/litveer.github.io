@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Tags: Game | LitVeer&#39;s House</title>
+        <title>Leetocde Learning | LitVeer&#39;s House</title>
         <meta name="author" content="LitVeer" />
         <meta name="description" content="Technology and Anime shared" />
         <meta name="keywords" content="Anime, Technology" />
@@ -28,6 +28,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,63 +145,79 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/Tech/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Tech
-            </a>
+                <div class="article">
+    <div>
+        <h1>Leetocde Learning</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/11/5
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Game/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Game
-            </a>
-        </span>
-        
-        
         
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2024/1/2</div>
-            <a href="/2024/01/02/Minecraft_Intranet_Penetration_Setup/">
-                <h3>MC内网穿透搭建</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/Game/" style="color: #00a596">Game</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <h3 id="相交链表"><a href="#相交链表" class="headerlink" title="相交链表"></a>相交链表</h3><img src="https://pic.leetcode-cn.com/1615224578-EBRtwv-Picture1.png" style="zoom:25%;">
+
+<p>假设链表1： A &#x3D; [1 2 7 8 9]	链表2： B &#x3D; [6 7 8 9]</p>
+<p><strong>连接链表：</strong> 从后端可看出，结尾处链表相交，且所在位置相同</p>
+<p>AB &#x3D; [1 2 7 8 9 0 6 7 8 9 0]</p>
+<p>BA &#x3D; [6 7 8 9 0 1 2 7 8 9 0] 	0的由来：结点定义node-&gt;next &#x3D; null</p>
+<p>由于最后一个结点为0，所以比较到最后必然结束</p>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) &#123;
+        ListNode *A = headA, *B = headB;
+        while (A != B) &#123;
+            A = A != nullptr ? A-&gt;next : headB;
+            B = B != nullptr ? B-&gt;next : headA;
+        &#125;
+        return A;
+    &#125;
+&#125;;
+
+作者：Krahets
+链接：https://leetcode.cn/problems/intersection-of-two-linked-lists/solutions/12624/intersection-of-two-linked-lists-shuang-zhi-zhen-l/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+</code></pre>
+<h3 id="反转链表（递归）"><a href="#反转链表（递归）" class="headerlink" title="反转链表（递归）"></a>反转链表（递归）</h3><img src="https://pic.leetcode-cn.com/8951bc3b8b7eb4da2a46063c1bb96932e7a69910c0a93d973bd8aa5517e59fc8.gif" style="zoom: 50%;">
+
+<p>设计递归</p>
+<ol>
+<li>结束条件 head-&gt;next &#x3D;&#x3D; null</li>
+<li>返回值 头节点ret</li>
+<li>递归循环操作：反转结点</li>
+</ol>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* reverseList(ListNode* head) &#123;
+        if (head == nullptr || head-&gt;next == nullptr) &#123;		//结束条件
+            return head;
+        &#125;
+        ListNode *ret = reverseList(head-&gt;next);	//返回值
+        head-&gt;next-&gt;next = head;	//递归操作
+        head-&gt;next = nullptr;		//此处设为null原因为设置末尾结点
+        return ret;
+    &#125;
+&#125;;
+</code></pre>
+
     </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
     
 </div>
 
@@ -236,6 +256,29 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="litveer/litveer.github.io"
+    data-repo-id="R_kgDOLATQxg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLATQxs4Cc47r"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
         
     </body>
 </html>
