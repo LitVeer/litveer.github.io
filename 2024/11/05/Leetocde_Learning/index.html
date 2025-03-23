@@ -206,6 +206,99 @@ public:
     &#125;
 &#125;;
 </code></pre>
+<h3 id="回溯算法（组合）"><a href="#回溯算法（组合）" class="headerlink" title="回溯算法（组合）"></a>回溯算法（组合）</h3><pre><code class="c++">//	list = &#123;1, 2, 3&#125;	所需排列组合的列表
+1 2 3 
+1 3 2
+2 1 3
+2 3 1
+3 1 2
+3 2 1
+//	visited 标记数组元素是否已访问
+//	path	保存排列结果
+
+void backtracking(vector&lt;int&gt; &amp;list, vector&lt;bool&gt; &amp;visited, vector&lt;int&gt; &amp;path) &#123;
+    if (path.size() == list.size()) &#123;	//	输出结果
+        for (int i = 0; i &lt; path.size(); i++) &#123;
+            cout &lt;&lt; path[i] &lt;&lt; &quot; &quot;;
+        &#125;
+        cout &lt;&lt; endl;
+        return;
+    &#125;
+
+    for (int i = 0; i &lt; list.size(); i++) &#123;
+        if (visited[i]) continue;	//	跳过已访问元素
+        visited[i] = true;
+        path.push_back(list[i]);
+        backtracking(list, visited, path);	//	该元素下一层
+        visited[i] = false;
+        path.pop_back();
+    &#125;
+&#125;
+</code></pre>
+<h3 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h3><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+// global const
+int total_way = 0;
+int dir[4][2] = &#123;&#123;0,1&#125;, &#123;1,0&#125;, &#123;0,-1&#125;, &#123;-1,0&#125;&#125;;
+
+// global variety
+pair&lt;int, int&gt; end1; 
+void dfs(vector&lt;vector&lt;int&gt;&gt; &amp;matrix, vector&lt;vector&lt;bool&gt;&gt; &amp;visited, int x, int y);
+
+int main() &#123;
+    // initial the size of matrix
+    int n, m, num;
+    cin &gt;&gt; n &gt;&gt; m;
+    vector&lt;vector&lt;int&gt;&gt; matrix(n+2, vector&lt;int&gt;(m+2, 0));
+    vector&lt;vector&lt;bool&gt;&gt; visited(n+2, vector&lt;bool&gt;(m+2, false));
+    
+    for(int i=1; i&lt;n+1; i++) &#123;
+        for(int j=1; j&lt;m+1; j++) &#123;
+            cin &gt;&gt; num;
+            matrix[i][j] = num;
+        &#125;
+    &#125;
+    
+    //  end1 position
+    cin &gt;&gt; end1.first &gt;&gt; end1.second;
+    
+    // DFS
+    dfs(matrix, visited, 1, 1);
+    
+    cout &lt;&lt; total_way &lt;&lt; endl;
+    
+    return 0;
+&#125; 
+
+void dfs(vector&lt;vector&lt;int&gt;&gt; &amp;matrix, vector&lt;vector&lt;bool&gt;&gt; &amp;visited, int x, int y) &#123;
+    
+    // Termination Condition
+    if(matrix[x][y] == 0 || visited[x][y]) return;
+    if(x == end1.first &amp;&amp; y == end1.second) &#123;
+        total_way++;
+        return;
+    &#125;
+    
+    // Loop
+    visited[x][y] = true;
+    
+    for(int i=0; i&lt;4; i++) &#123;
+        int nx = x + dir[i][0];
+        int ny = y + dir[i][1];
+        
+        dfs(matrix, visited, nx, ny);
+        
+    &#125;
+    
+    visited[x][y] = false;
+    
+    return;
+&#125;
+</code></pre>
 
     </div>
     
@@ -225,7 +318,7 @@ public:
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2024 LitVeer&#39;s House
+            2022 - 2025 LitVeer&#39;s House
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
