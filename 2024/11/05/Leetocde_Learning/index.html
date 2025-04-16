@@ -235,7 +235,7 @@ void backtracking(vector&lt;int&gt; &amp;list, vector&lt;bool&gt; &amp;visited, 
     &#125;
 &#125;
 </code></pre>
-<h3 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h3><pre><code class="c++">#include &lt;iostream&gt;
+<h3 id="迷宫问题（寻找可达路径数量）"><a href="#迷宫问题（寻找可达路径数量）" class="headerlink" title="迷宫问题（寻找可达路径数量）"></a>迷宫问题（寻找可达路径数量）</h3><pre><code class="c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
 
@@ -299,6 +299,10 @@ void dfs(vector&lt;vector&lt;int&gt;&gt; &amp;matrix, vector&lt;vector&lt;bool&g
     return;
 &#125;
 </code></pre>
+<p>关键点：</p>
+<ul>
+<li>visited的标记位置（判断合法后为true，结束Loop后为false）</li>
+</ul>
 
     </div>
     
